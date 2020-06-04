@@ -1,0 +1,34 @@
+library(shiny)
+library(shinythemes)
+
+ui <- fluidPage(
+  titlePanel("Title Panel"),
+  sidebarLayout(
+    sidebarPanel(
+     h1 ("Installation"),
+     p ("Shiny is avaialable of CRAN, so you can
+        install it in the usual way from your R 
+        console :"),
+     h5 ('install.package("shiny")',style = "color:red", align = "center"),
+     img(src = "rstudio.png", height = 70, width = 200)
+    ),
+    mainPanel (
+      h1 ("Introducing Shiny"),
+      p ("Shiny is a new package from RStudio that makes it ", em("incredibely easy"), "to build interactive web-
+         applications with R"),
+      br(),
+      p("For an introduction and live examples, visit the Shiny homepage"),
+      br(),
+      h1 ("Features"),
+      p ("- Build useful web applications with only few lines of codes- no Javascript required"),
+      p ("- Shiny applications are automatically 'live' in the same way ", strong ("spreadsheets"), "are live. Outputs
+            change instantly as users modify inputs, without requiring a reload of the browser.")
+  )
+)
+)
+
+server <- function(input, output){
+  
+}
+
+shinyApp(ui = ui , server=server)
